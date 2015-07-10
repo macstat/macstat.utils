@@ -1,0 +1,17 @@
+{
+    "contents" : "# Hello, world!\n#\n# This is an example function named 'hello'\n# which prints 'Hello, world!'.\n#\n# You can learn more about package authoring with RStudio at:\n#\n#   http://r-pkgs.had.co.nz/\n#\n# Some useful keyboard shortcuts for package authoring:\n#\n#   Build and Reload Package:  'Ctrl + Shift + B'\n#   Check Package:             'Ctrl + Shift + E'\n#   Test Package:              'Ctrl + Shift + T'\n\n\n\nstat.opisowe <- function(data,x,g=\"\") {\n\n    require(plyr) #biblioteka do\n\n    if(is.factor(x)==TRUE)\n    # tabela jakościowa\n        if ( missing(g)==FALSE )  {\n            temp <- ddply(data, .(g), transform, sum.n = length(g))\n            ddply(temp, .(g,x), summarise, n = length(x), proporcja.grup = n / sum.n[1] * 100, .drop=FALSE)\n        }\n    else{\n        t1 <- table(x)\n        t.finished <-cbind(t1, round(prop.table(t1)*100,2))\n        colnames(t.finished) <- c('n','procent')\n        t.finished\n    }\n\n    else\n        #tabela ilościowa\n        ddply(data, .(g), summarise, mean=mean(x, na.rm=TRUE), sd=sd(x, na.rm=TRUE),  min=min(x, na.rm=TRUE), q1=quantile(x,.25, na.rm=TRUE), median=median(x, na.rm=TRUE), q3=quantile(x,.75, na.rm=TRUE), max=max(x, na.rm=TRUE))\n\n}\n\n\n\n",
+    "created" : 1436528219835.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1383782674",
+    "id" : "19D58AA1",
+    "lastKnownWriteTime" : 1436528419,
+    "path" : "D:/R/macstat.utils/R/stat.opisowe.R",
+    "project_path" : "R/stat.opisowe.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

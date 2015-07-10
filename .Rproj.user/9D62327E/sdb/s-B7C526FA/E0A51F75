@@ -1,0 +1,17 @@
+{
+    "contents" : "\\name{stat.opisowe}\n\\alias{stat.opisowe}\n\\title{Tables with descriptive statistics}\n\\usage{\nstat.opisowe(data, x, g=\"\")\n}\n\\description{\nChecks if x is qualitative or quantitative variable, and gives tables with counts and percentages or mean, sd, medianm 1st, 3rd quartile. If categorical variable g is specified tables are showed for each of subgroups.\n}\n\\examples{\nstat,opisowe(mtcars, mtcars$mpg)\nstat,opisowe(mtcars, mtcars$mpg, mtcars$cyl)\n}\n",
+    "created" : 1436559059194.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1131813973",
+    "id" : "E0A51F75",
+    "lastKnownWriteTime" : 1436559321,
+    "path" : "D:/R/macstat.utils/man/stat.opisowe.Rd",
+    "project_path" : "man/stat.opisowe.Rd",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_doc"
+}
